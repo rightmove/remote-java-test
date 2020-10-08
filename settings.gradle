@@ -1,0 +1,4 @@
+rootProject.name = 'remote-java-test'
+
+include 'web'
+include 'data'

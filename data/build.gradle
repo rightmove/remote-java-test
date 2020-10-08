@@ -1,0 +1,4 @@
+dependencies {
+	compile group: 'org.springframework', name: 'spring-context', version: '5.2.4.RELEASE'
+	compile 'jakarta.annotation:jakarta.annotation-api:1.3.5'
+}

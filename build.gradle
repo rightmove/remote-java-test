@@ -1,0 +1,39 @@
+buildscript {
+	ext {
+		springBootVersion = '2.2.5.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+
+apply plugin: 'eclipse'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.rightmove'
+version = '0.0.1-SNAPSHOT'
+
+
+allprojects {
+	apply plugin: 'java'
+	sourceCompatibility = 11
+
+	repositories {
+		mavenCentral()
+	}
+}
+
+subprojects {
+	dependencies {
+		testCompile 'org.assertj:assertj-core:3.13.2'
+		testCompile 'org.junit.jupiter:junit-jupiter:5.5.2'
+	}
+
+	test {
+		useJUnitPlatform()
+	}
+}

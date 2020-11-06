@@ -29,7 +29,6 @@ allprojects {
 
 subprojects {
 	dependencies {
-		testCompile 'org.assertj:assertj-core:3.13.2'
 		testCompile 'org.junit.jupiter:junit-jupiter:5.5.2'
 	}
 

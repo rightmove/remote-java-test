@@ -7,7 +7,8 @@ import org.junit.jupiter.api.Test;
 import java.util.Optional;
 import java.util.Set;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PropertyDaoImplTest {
 
@@ -15,12 +16,12 @@ class PropertyDaoImplTest {
 
 	@BeforeEach
 	void setup() {
-	    underTest = new PropertyDaoImpl();
+		underTest = new PropertyDaoImpl();
 	}
 
 	@AfterEach
 	void tearDown() {
-	    underTest.clear();
+		underTest.clear();
 	}
 
 	@Test
@@ -30,15 +31,15 @@ class PropertyDaoImplTest {
 
 		Optional<PropertyEntity> one = underTest.getOne(1L);
 
-		assertThat(one).isPresent();
-		assertThat(one.get().getId()).isEqualTo(1L);
+		assertTrue(one.isPresent());
+		assertEquals(1L, one.get().getId());
 	}
 
 	@Test
 	void shouldReturnOptionalEmptyWhenPropertyNotFound() {
 		Optional<PropertyEntity> one = underTest.getOne(1L);
 
-		assertThat(one).isNotPresent();
+		assertTrue(one.isEmpty());
 	}
 
 	@Test
@@ -52,7 +53,7 @@ class PropertyDaoImplTest {
 
 		Set<PropertyEntity> result = underTest.getAll();
 
-		assertThat(result).hasSize(1);
+		assertEquals(1, result.size());
 	}
 
 	@Test
@@ -67,9 +68,9 @@ class PropertyDaoImplTest {
 
 		Optional<PropertyEntity> result = underTest.getOne(1L);
 
-		assertThat(underTest.getAll()).hasSize(1);
-		assertThat(result.get().getPrice()).isEqualTo(200_000L);
-		assertThat(result.get().getId()).isEqualTo(1L);
+		assertEquals(1, underTest.getAll().size());
+		assertEquals(200_000L, result.get().getPrice());
+		assertEquals(1L, result.get().getId());
 	}
 
 	@Test
@@ -82,7 +83,7 @@ class PropertyDaoImplTest {
 
 		Set<PropertyEntity> propertyEntities = underTest.getAll();
 
-		assertThat(propertyEntities).isEmpty();
+		assertTrue(propertyEntities.isEmpty());
 	}
 
 	@Test
@@ -95,11 +96,11 @@ class PropertyDaoImplTest {
 
 		Set<PropertyEntity> propertyEntities = underTest.getAll();
 
-		assertThat(propertyEntities).hasSize(2);
+		assertEquals(2, propertyEntities.size());
 	}
 
 	@Test
 	void shouldReturnEmptyListWhenNoProperties() {
-		assertThat(underTest.getAll()).isEmpty();
+		assertTrue(underTest.getAll().isEmpty());
 	}
 }

@@ -19,7 +19,8 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static io.restassured.RestAssured.given;
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -60,8 +61,8 @@ class ApplicationTests {
 				.extract()
 				.jsonPath();
 
-		assertThat(jsonPath.getList("properties")).hasSize(1);
-		assertThat(jsonPath.getLong("properties[0].id")).isEqualTo(1L);
+		assertEquals(1, jsonPath.getList("properties").size());
+		assertEquals(1L, jsonPath.getLong("properties[0].id"));
 	}
 
 	@Test
@@ -81,6 +82,6 @@ class ApplicationTests {
 				.extract()
 				.jsonPath();
 
-		assertThat(jsonPath.getList("properties")).hasSize(0);
+		assertTrue(jsonPath.getList("properties").isEmpty());
 	}
 }

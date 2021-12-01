@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.2.5.RELEASE'
+		springBootVersion = '2.6.0'
 	}
 	repositories {
 		mavenCentral()
@@ -10,13 +10,11 @@ buildscript {
 	}
 }
 
-
 apply plugin: 'eclipse'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.rightmove'
 version = '0.0.1-SNAPSHOT'
-
 
 allprojects {
 	apply plugin: 'java'
@@ -29,7 +27,7 @@ allprojects {
 
 subprojects {
 	dependencies {
-		testCompile 'org.junit.jupiter:junit-jupiter:5.5.2'
+		testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 	}
 
 	test {

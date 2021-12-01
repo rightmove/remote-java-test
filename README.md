@@ -16,6 +16,14 @@ If you need to do this, then you can by modifying line 23 of the root `build.gra
 ```
 sourceCompatibility = 11
 ```
+to:
+```
+sourceCompatibility = 1.8
+```
+You can also choose to use a newer version by setting
+```
+sourceCompatibility = 17
+```
 **Gradle** - You do not need to install gradle. The project will be using the gradle wrapper, as long as you use the command `./gradlew`.  
 
 ### Running
@@ -28,4 +36,4 @@ To test the application via the command line - `./gradlew test`
 ## Technologies
 * Spring Boot 2
 * JUnit 5
-* Gradle 6
+* Gradle 7

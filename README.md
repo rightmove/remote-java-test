@@ -24,6 +24,9 @@ You can also choose to use a newer version by setting
 ```
 sourceCompatibility = 17
 ```
+```
+sourceCompatibility = 19
+```
 **Gradle** - You do not need to install gradle. The project will be using the gradle wrapper, as long as you use the command `./gradlew`.  
 
 ### Running

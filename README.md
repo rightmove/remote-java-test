@@ -8,7 +8,7 @@ Before your interview, please ensure that you can run the project on your machin
 You can validate this by running the gradle task `./gradlew build` in your command line. This task will among other things, compile the code and run the tests. You should get a successful build. 
 
 
-> Note - Please don't modify any code in the project just yet. The interviewer will be pairing with you on the day of the interview.  
+> Note - Please don't modify any code in the project just yet. The interviewer will be pairing with you on the day of the interview. Use of AI tools during the interview is strictly prohibited.
 
 ### Requirements
 **Java** - This project has been configured to use Java 11. However, we have confirmed that this project will work with a minimum Java 1.8. 

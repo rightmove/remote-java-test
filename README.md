@@ -11,18 +11,10 @@ You can validate this by running the gradle task `./gradlew build` in your comma
 > Note - Please don't modify any code in the project just yet. The interviewer will be pairing with you on the day of the interview. Use of AI tools during the interview is strictly prohibited.
 
 ### Requirements
-**Java** - This project has been configured to use Java 11. However, we have confirmed that this project will work with a minimum Java 1.8. 
-If you need to do this, then you can by modifying line 23 of the root `build.gradle` file, changing the `sourceCompatibility`. 
-```
-sourceCompatibility = 11
-```
-to:
-```
-sourceCompatibility = 1.8
-```
+**Java** - This project has been configured to use Java 21. 
 You can also choose to use a newer version by setting
 ```
-sourceCompatibility = 17
+sourceCompatibility = 23
 ```
 **Gradle** - You do not need to install gradle. The project will be using the gradle wrapper, as long as you use the command `./gradlew`.  
 
@@ -34,6 +26,6 @@ To build the application via the command line - `./gradlew build`
 To test the application via the command line - `./gradlew test`
 
 ## Technologies
-* Spring Boot 2
+* Spring Boot 3.4.3
 * JUnit 5
-* Gradle 7
+* Gradle 8.10

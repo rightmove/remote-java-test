@@ -32,7 +32,7 @@ class PropertyDaoImplTest {
 		Optional<PropertyEntity> one = underTest.getOne(1L);
 
 		assertTrue(one.isPresent());
-		assertEquals(1L, one.get().getId());
+		assertEquals(1L, one.get().id());
 	}
 
 	@Test
@@ -69,8 +69,8 @@ class PropertyDaoImplTest {
 		Optional<PropertyEntity> result = underTest.getOne(1L);
 
 		assertEquals(1, underTest.getAll().size());
-		assertEquals(200_000L, result.get().getPrice());
-		assertEquals(1L, result.get().getId());
+		assertEquals(200_000L, result.get().price());
+		assertEquals(1L, result.get().id());
 	}
 
 	@Test

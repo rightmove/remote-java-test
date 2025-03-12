@@ -1,7 +1,4 @@
 buildscript {
-	ext {
-		springBootVersion = '2.6.0'
-	}
 	repositories {
 		mavenCentral()
 	}
@@ -17,6 +14,6 @@ dependencies {
 	implementation project(':data')
 	implementation('org.springframework.boot:spring-boot-starter-web')
 
-	testImplementation 'io.rest-assured:rest-assured:4.4.0'
+	testImplementation "io.rest-assured:rest-assured:${restAssuredVersion}"
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

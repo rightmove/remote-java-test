@@ -33,6 +33,6 @@ public class PropertyDaoImpl implements PropertyDao {
 
 	@Override
 	public void save(PropertyEntity propertyEntity) {
-		properties.put(propertyEntity.getId(), propertyEntity);
+		properties.put(propertyEntity.id(), propertyEntity);
 	}
 }
